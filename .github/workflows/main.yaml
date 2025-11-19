@@ -4,17 +4,6 @@ jobs:
     HelloWorldJob:
         runs-on: ubuntu-latest
         steps:
-            - name: Hello World Step
-              run: echo "Hello, World!"
-            - name: Hello World Step 2
-              run: echo "This is another step in the workflow."
-            - name: Hello World Step 3
-              run: echo "Workflow execution completed."
-
-            - name: Final Step
-              run: echo "Goodbye, World!"
-    another-job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Another Job Step
-              run: echo "This is a separate job."
+            - name: checkout repository code
+              uses: actions/checkout@v4
+            - run: echo "$(cat hello_world.txt)"
